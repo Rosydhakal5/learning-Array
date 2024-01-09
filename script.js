@@ -27,3 +27,7 @@ console.log(i, j);
 const [a, , [o, k]] = nested;
 console.log(a, o, k);
 
+
+//default values
+const [p =1, q=1, r=1] = [8, 9];
+console.log(p, q, r);
