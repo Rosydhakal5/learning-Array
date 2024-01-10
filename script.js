@@ -135,3 +135,6 @@ console.log(...str);
 //Rest operator using ... on left side
 const [d, e, ...others] = [1,2,3,4,5];
 console.log(d,e,others);
+//REST Should always be use in last 
+const [Pizza, Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+console.log(Pizza, Risotto, otherFood);
