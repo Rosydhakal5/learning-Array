@@ -264,3 +264,7 @@ const printGoal = function(...players){
 console.log(`${players.length} goals were scored`);
 }
 printGoal(...game.scored);
+
+//check the odd 
+team1 < team2 && console.log("Team 1 is more likely to win");
+team1 > team2 && console.log("Team 2 is more likely to win");
