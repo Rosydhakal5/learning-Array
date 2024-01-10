@@ -108,10 +108,12 @@ const letters = [...str, ' ', 'R.'];
 console.log(letters);
 console.log(...str);
 
+
 const ingredients = [
   prompt("let's make pasts! Ingredient 1?"),
   prompt("let's make pasts! Ingredient 2?"),
   prompt("let's make pasts! Ingredient 3?")
 ]
 console.log(ingredients);
+restaurant.orderPasta(...ingredients);
 
