@@ -246,4 +246,6 @@ console.log(players1, players2);
 const [gk, ...fieldPlayers] = players1;
 console.log(gk, fieldPlayers);
 
-
+//assigning vairable and using spread to keep total players together
+const allPlayers = [...players1, ...players2]
+console.log(allPlayers);
