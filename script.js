@@ -22,10 +22,10 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  order: function(starterIndex, mainIndex){
+  order(starterIndex, mainIndex){
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
   }, 
-  orderDelivery: function ({starterIndex, mainIndex, time, address}) {
+  orderDelivery({starterIndex, mainIndex, time, address}) {
     console.log( `Your order has been Recieved on ${time}, for ${this.mainMenu[mainIndex]} and  ${this.starterMenu[starterIndex]}, soon will be delivered to ${address}
       Thank You for choosing us 🥳`  
     );
@@ -33,10 +33,10 @@ const restaurant = {
   //using ES^ object literal 
   openingHours,
 
-  orderPasta:function(ing1, ing2, ing3){
+  orderPasta(ing1, ing2, ing3){
     console.log(`Here is your pasta ${ing1},${ing2}, ${ing3} `)
   },
-  orderPizza: function(mainIngredient, ...otherIngredient){
+  orderPizza(mainIngredient, ...otherIngredient){
     console.log(mainIngredient);
     console.log(otherIngredient);
   }
