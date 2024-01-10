@@ -198,73 +198,79 @@ restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
 
 
 //Creating game info and accessing value
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-const [players1, players2] = game.players;
-console.log(players1, players2);
+// const [players1, players2] = game.players;
+// console.log(players1, players2);
 
-//Assiging the first player as goal keeper and keeping others as fieldplayer
-const [gk, ...fieldPlayers] = players1;
-console.log(gk, fieldPlayers);
+// //Assiging the first player as goal keeper and keeping others as fieldplayer
+// const [gk, ...fieldPlayers] = players1;
+// console.log(gk, fieldPlayers);
 
-//assigning vairable and using spread to keep total players together
-const allPlayers = [...players1, ...players2]
-console.log(allPlayers);
+// //assigning vairable and using spread to keep total players together
+// const allPlayers = [...players1, ...players2]
+// console.log(allPlayers);
 
-//new array 
-const players1Final = [...players1, "Thiago", "Play", "Messi"]
-console.log(players1Final);
+// //new array 
+// const players1Final = [...players1, "Thiago", "Play", "Messi"]
+// console.log(players1Final);
 
-//Nested destructuring 
-const {odds: {team1, x:draw, team2}} = game;
-console.log(team1, draw, team2);
+// //Nested destructuring 
+// const {odds: {team1, x:draw, team2}} = game;
+// console.log(team1, draw, team2);
 
-//get the goal scored
-const printGoal = function(...players){
-  console.log(players);
-console.log(`${players.length} goals were scored`);
+// //get the goal scored
+// const printGoal = function(...players){
+//   console.log(players);
+// console.log(`${players.length} goals were scored`);
+// }
+// printGoal(...game.scored);
+
+// //check the odd 
+// team1 < team2 && console.log("Team 1 is more likely to win");
+// team1 > team2 && console.log("Team 2 is more likely to win");
+
+//Looping over array \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+  const mennu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of mennu) {
+  console.log(item)
 }
-printGoal(...game.scored);
-
-//check the odd 
-team1 < team2 && console.log("Team 1 is more likely to win");
-team1 > team2 && console.log("Team 2 is more likely to win");
