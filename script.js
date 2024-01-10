@@ -11,6 +11,20 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    thu:{
+      open: 11,
+      close: 23,
+    },
+    sat:{
+      open: 0,
+      close: 24,
+    }
+  },
   order: function(starterIndex, mainIndex){
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
   }
@@ -31,3 +45,14 @@ console.log(a, o, k);
 //default values
 const [p =1, q=1, r=1] = [8, 9];
 console.log(p, q, r);
+
+//destructuring objects
+
+const {name, openingHour, categories} = restaurant;
+console.log(name, openingHour, categories);
+
+const {name: restaurantName, openingHour: hours, categories: tags} = restaurant;
+console.log(restaurantName, hours, tags );
+
+const {menu = [], starterMenu: starters = []} = restaurant;
+console.log(menu, starters);
