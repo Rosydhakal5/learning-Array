@@ -257,3 +257,10 @@ console.log(players1Final);
 //Nested destructuring 
 const {odds: {team1, x:draw, team2}} = game;
 console.log(team1, draw, team2);
+
+//get the goal scored
+const printGoal = function(...players){
+  console.log(players);
+console.log(`${players.length} goals were scored`);
+}
+printGoal(...game.scored);
