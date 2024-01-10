@@ -125,3 +125,8 @@ const newResturant = {
   ...restaurant, 
   }
 console.log(newResturant);
+
+const resturantCopy = {...restaurant};
+resturantCopy.name = "Maria Tusa";
+console.log(resturantCopy);
+console.log(newResturant);
