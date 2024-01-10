@@ -88,3 +88,4 @@ const badNewArr = [1, 2, arr[0], arr[1], arr[2]]
 console.log(badNewArr);
 const newArr = [1, 2, ...arr] //using spread operator 
 console.log(newArr);
+console.log(...newArr);
