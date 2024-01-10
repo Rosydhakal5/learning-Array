@@ -1,9 +1,19 @@
 'use strict';
 
-// Data needed for a later exercise
-const flights =
-  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
-
+const openingHours = {
+  thu: {
+    open: 12,
+    close: 22,
+  },
+  fri:{
+    open: 11,
+    close: 23,
+  },
+  sat:{
+    open: 0,
+    close: 24,
+  }
+};
 // Data needed for first part of the section
 const restaurant = {
   name: 'Classico Italiano',
@@ -11,20 +21,7 @@ const restaurant = {
   categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri:{
-      open: 11,
-      close: 23,
-    },
-    sat:{
-      open: 0,
-      close: 24,
-    }
-  },
+
   order: function(starterIndex, mainIndex){
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
   }, 
@@ -33,6 +30,9 @@ const restaurant = {
       Thank You for choosing us 🥳`  
     );
   },
+  //using ES^ object literal 
+  openingHours,
+
   orderPasta:function(ing1, ing2, ing3){
     console.log(`Here is your pasta ${ing1},${ing2}, ${ing3} `)
   },
@@ -67,50 +67,50 @@ restaurant.orderDelivery({
 
 // //destructuring objects
 
-const {name, openingHours, categories} = restaurant;
-console.log(name, openingHours, categories);
+// const {name, openingHours, categories} = restaurant;
+// console.log(name, openingHours, categories);
 
-// const {name: restaurantName, openingHour: hours, categories: tags} = restaurant;
-// console.log(restaurantName, hours, tags );
+// // const {name: restaurantName, openingHour: hours, categories: tags} = restaurant;
+// // console.log(restaurantName, hours, tags );
 
-// const {menu = [], starterMenu: starters = []} = restaurant;
-// console.log(menu, starters);
+// // const {menu = [], starterMenu: starters = []} = restaurant;
+// // console.log(menu, starters);
 
-//Mutating Variable 
-let a = 111;
-let b = 999;
-const obj = {a: 23, b:7, c:14};
-({a, b} = obj);
-console.log(a, b);
+// //Mutating Variable 
+// let a = 111;
+// let b = 999;
+// const obj = {a: 23, b:7, c:14};
+// ({a, b} = obj);
+// console.log(a, b);
 
-//nested objects
-const {fri: {open: o, close: c}} = openingHours;
-console.log(o, c);
+// //nested objects
+// const {fri: {open: o, close: c}} = openingHours;
+// console.log(o, c);
 
 
-//Spread Operator 
+// //Spread Operator 
 
-const arr = [7, 8, 9];
-const badNewArr = [1, 2, arr[0], arr[1], arr[2]]
-console.log(badNewArr);
-const newArr = [1, 2, ...arr] //using spread operator 
-console.log(newArr);
-console.log(...newArr);
-const newMenu = [...restaurant.mainMenu, 'Gnocci'];
-console.log(newMenu);
+// const arr = [7, 8, 9];
+// const badNewArr = [1, 2, arr[0], arr[1], arr[2]]
+// console.log(badNewArr);
+// const newArr = [1, 2, ...arr] //using spread operator 
+// console.log(newArr);
+// console.log(...newArr);
+// const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+// console.log(newMenu);
 
-//Copy Array 
-const mainMenuCopy = [...restaurant.mainMenu];
+// //Copy Array 
+// const mainMenuCopy = [...restaurant.mainMenu];
 
-//join 2 array 
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// //join 2 array 
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
-//Iterables: array, strings, maps, sets. NOT objects
-const str = 'hello';
-const letters = [...str, ' ', 'R.'];
-console.log(letters);
-console.log(...str);
+// //Iterables: array, strings, maps, sets. NOT objects
+// const str = 'hello';
+// const letters = [...str, ' ', 'R.'];
+// console.log(letters);
+// console.log(...str);
 
 
 // const ingredients = [
@@ -137,64 +137,64 @@ console.log(...str);
 
 
 //Rest operator using ... on left side
-const [d, e, ...others] = [1,2,3,4,5];
-console.log(d,e,others);
-//REST Should always be use in last 
-const [Pizza, Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
-console.log(Pizza, Risotto, otherFood);
+// const [d, e, ...others] = [1,2,3,4,5];
+// console.log(d,e,others);
+// //REST Should always be use in last 
+// const [Pizza, Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
+// console.log(Pizza, Risotto, otherFood);
 
-//objects
-const {sat, ...weekdays} = restaurant.openingHours;
-console.log(sat, weekdays);
+// //objects
+// const {sat, ...weekdays} = restaurant.openingHours;
+// console.log(sat, weekdays);
 
-//functions 
-const add = function(...numbers){
-  let sum = 0;
-  for(let i = 0; i<numbers.length; i++ )
-  sum += numbers[i];
-  console.log(sum);
-}
+// //functions 
+// const add = function(...numbers){
+//   let sum = 0;
+//   for(let i = 0; i<numbers.length; i++ )
+//   sum += numbers[i];
+//   console.log(sum);
+// }
 
-add(2, 3)
-add(5, 3, 7, 2)
-add(5, 3, 7, 2, 1, 4);
-
-
-restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
+// add(2, 3)
+// add(5, 3, 7, 2)
+// add(5, 3, 7, 2, 1, 4);
 
 
-//Short-circuit evaluation 
-console.log(3 || "Rosy");
-console.log("" || "Dhakal");
-console.log(undefined || null);
-console.log(undefined || 0 || "Hello" || 23 ||null);
+// restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
 
-restaurant.numGuests = 23;
-/// when numGuest === 0
 
-restaurant.numGuests2 = 0; 
-const guest = restaurant.numGuests2 || 10;
-console.log(guest)
+// //Short-circuit evaluation 
+// console.log(3 || "Rosy");
+// console.log("" || "Dhakal");
+// console.log(undefined || null);
+// console.log(undefined || 0 || "Hello" || 23 ||null);
 
-//correcy way for nullish null and undefined (NOT 0 or ' ')
-const guestCorrect = restaurant.numGuests2 ?? 10;
-console.log(guestCorrect);
+// restaurant.numGuests = 23;
+// /// when numGuest === 0
 
-const guest1 = restaurant.numGuests? restaurant.numGuests : 10;
-console.log(guest1);
+// restaurant.numGuests2 = 0; 
+// const guest = restaurant.numGuests2 || 10;
+// console.log(guest)
 
-const guest2 = restaurant.numGuests || 10;
-console.log(guest2);
+// //correcy way for nullish null and undefined (NOT 0 or ' ')
+// const guestCorrect = restaurant.numGuests2 ?? 10;
+// console.log(guestCorrect);
 
-//////////////////////USING AND OPERATOR ////////////////////////
-console.log(7 && 'Rosy');
-console.log("hello" && 23 && null && 'rosy');
-//using if statement
-if (restaurant.orderPizza){
-  restaurant.orderPizza("mushroom", "spinach");
-}
-//AND operator 
-restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
+// const guest1 = restaurant.numGuests? restaurant.numGuests : 10;
+// console.log(guest1);
+
+// const guest2 = restaurant.numGuests || 10;
+// console.log(guest2);
+
+// //////////////////////USING AND OPERATOR ////////////////////////
+// console.log(7 && 'Rosy');
+// console.log("hello" && 23 && null && 'rosy');
+// //using if statement
+// if (restaurant.orderPizza){
+//   restaurant.orderPizza("mushroom", "spinach");
+// }
+// //AND operator 
+// restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
 
 
 //Creating game info and accessing value
@@ -270,7 +270,13 @@ restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
 // team1 > team2 && console.log("Team 2 is more likely to win");
 
 //Looping over array \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
-  const mennu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-for (const item of mennu) {
+//forof
+  const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of menu) {
   console.log(item)
 }
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`)
+}
+// console.log([...menu.entries()])
