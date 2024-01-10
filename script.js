@@ -35,6 +35,10 @@ const restaurant = {
   },
   orderPasta:function(ing1, ing2, ing3){
     console.log(`Here is your pasta ${ing1},${ing2}, ${ing3} `)
+  },
+  orderPizza: function(mainIngredient, ...otherIngredient){
+    console.log(mainIngredient);
+    console.log(otherIngredient);
   }
 }
 restaurant.orderDelivery({
@@ -154,3 +158,6 @@ const add = function(...numbers){
 add(2, 3)
 add(5, 3, 7, 2)
 add(5, 3, 7, 2, 1, 4);
+
+
+restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
