@@ -89,3 +89,5 @@ console.log(badNewArr);
 const newArr = [1, 2, ...arr] //using spread operator 
 console.log(newArr);
 console.log(...newArr);
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
