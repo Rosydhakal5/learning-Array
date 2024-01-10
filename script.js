@@ -170,6 +170,16 @@ console.log(undefined || null);
 console.log(undefined || 0 || "Hello" || 23 ||null);
 
 restaurant.numGuests = 23;
+/// when numGuest === 0
+
+restaurant.numGuests2 = 0; 
+const guest = restaurant.numGuests2 || 10;
+console.log(guest)
+
+//correcy way for nullish null and undefined (NOT 0 or ' ')
+const guestCorrect = restaurant.numGuests2 ?? 10;
+console.log(guestCorrect);
+
 const guest1 = restaurant.numGuests? restaurant.numGuests : 10;
 console.log(guest1);
 
