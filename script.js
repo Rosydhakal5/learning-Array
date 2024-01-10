@@ -1,15 +1,15 @@
 'use strict';
-
+const weekdays = ["Monday", "tuesday", "wed", "thu", "fri", "sat", "sun"]
 const openingHours = {
-  thu: {
+  [weekdays[3]]: {
     open: 12,
     close: 22,
   },
-  fri:{
+  [weekdays[4]]:{
     open: 11,
     close: 23,
   },
-  sat:{
+  [weekdays[2+3]]:{
     open: 0,
     close: 24,
   }
