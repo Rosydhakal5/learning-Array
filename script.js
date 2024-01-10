@@ -168,9 +168,22 @@ console.log(3 || "Rosy");
 console.log("" || "Dhakal");
 console.log(undefined || null);
 console.log(undefined || 0 || "Hello" || 23 ||null);
+
 restaurant.numGuests = 23;
 const guest1 = restaurant.numGuests? restaurant.numGuests : 10;
 console.log(guest1);
 
 const guest2 = restaurant.numGuests || 10;
 console.log(guest2);
+
+//////////////////////USING AND OPERATOR ////////////////////////
+console.log(7 && 'Rosy');
+console.log("hello" && 23 && null && 'rosy');
+//using if statement
+if (restaurant.orderPizza){
+  restaurant.orderPizza("mushroom", "spinach");
+}
+//AND operator 
+restaurant.orderPizza && restaurant.orderPizza("mushroom", "spinach");
+
+
