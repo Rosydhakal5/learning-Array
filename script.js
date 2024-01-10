@@ -119,14 +119,19 @@ console.log(...str);
 
 //objects
 
-const newResturant = {
-  founder: "gaetana",
-  year: 1998,
-  ...restaurant, 
-  }
-console.log(newResturant);
+// const newResturant = {
+//   founder: "gaetana",
+//   year: 1998,
+//   ...restaurant, 
+//   }
+// console.log(newResturant);
 
-const resturantCopy = {...restaurant};
-resturantCopy.name = "Maria Tusa";
-console.log(resturantCopy);
-console.log(newResturant);
+// const resturantCopy = {...restaurant};
+// resturantCopy.name = "Maria Tusa";
+// console.log(resturantCopy);
+// console.log(newResturant);
+
+
+//Rest operator using ... on left side
+const [d, e, ...others] = [1,2,3,4,5];
+console.log(d,e,others);
