@@ -65,5 +65,5 @@ const obj = {a: 23, b:7, c:14};
 console.log(a, b);
 
 //nested objects
-const {fri} = openingHours;
-console.log(fri);
+const {fri: {open, close}} = openingHours;
+console.log(open, close);
