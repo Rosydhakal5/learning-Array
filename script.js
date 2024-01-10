@@ -16,7 +16,7 @@ const restaurant = {
       open: 12,
       close: 22,
     },
-    thu:{
+    fri:{
       open: 11,
       close: 23,
     },
@@ -48,8 +48,8 @@ const restaurant = {
 
 // //destructuring objects
 
-// const {name, openingHour, categories} = restaurant;
-// console.log(name, openingHour, categories);
+const {name, openingHours, categories} = restaurant;
+console.log(name, openingHours, categories);
 
 // const {name: restaurantName, openingHour: hours, categories: tags} = restaurant;
 // console.log(restaurantName, hours, tags );
@@ -60,8 +60,10 @@ const restaurant = {
 //Mutating Variable 
 let a = 111;
 let b = 999;
-
 const obj = {a: 23, b:7, c:14};
-
 ({a, b} = obj);
 console.log(a, b);
+
+//nested objects
+const {fri} = openingHours;
+console.log(fri);
