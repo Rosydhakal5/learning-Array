@@ -27,8 +27,20 @@ const restaurant = {
   },
   order: function(starterIndex, mainIndex){
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+  }, 
+  orderDelivery: function ({starterIndex, mainIndex, time, address}) {
+    console.log( `Your order has been Recieved on ${time}, for ${this.mainMenu[mainIndex]} and  ${this.starterMenu[starterIndex]}, soon will be delivered to ${address}
+      Thank You for choosing us 🥳`  
+    );
   }
 }
+restaurant.orderDelivery({
+  time: "22:30",
+  address: " 11/11 some streets down 2024",
+  mainIndex : 2,
+  starterIndex: 2,
+})
+
 
 // let [main, secondary] = restaurant.categories;
 // [main, secondary] = [secondary, main]
