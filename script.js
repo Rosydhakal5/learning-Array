@@ -138,3 +138,7 @@ console.log(d,e,others);
 //REST Should always be use in last 
 const [Pizza, Risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu]
 console.log(Pizza, Risotto, otherFood);
+
+//objects
+const {sat, ...weekdays} = restaurant.openingHours;
+console.log(sat, weekdays);
