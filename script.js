@@ -109,11 +109,19 @@ console.log(letters);
 console.log(...str);
 
 
-const ingredients = [
-  prompt("let's make pasts! Ingredient 1?"),
-  prompt("let's make pasts! Ingredient 2?"),
-  prompt("let's make pasts! Ingredient 3?")
-]
-console.log(ingredients);
-restaurant.orderPasta(...ingredients);
+// const ingredients = [
+//   prompt("let's make pasts! Ingredient 1?"),
+//   prompt("let's make pasts! Ingredient 2?"),
+//   prompt("let's make pasts! Ingredient 3?")
+// ]
+// console.log(ingredients);
+// restaurant.orderPasta(...ingredients);
 
+//objects
+
+const newResturant = {
+  founder: "gaetana",
+  year: 1998,
+  ...restaurant, 
+  }
+console.log(newResturant);
