@@ -249,3 +249,11 @@ console.log(gk, fieldPlayers);
 //assigning vairable and using spread to keep total players together
 const allPlayers = [...players1, ...players2]
 console.log(allPlayers);
+
+//new array 
+const players1Final = [...players1, "Thiago", "Play", "Messi"]
+console.log(players1Final);
+
+//Nested destructuring 
+const {odds: {team1, x:draw, team2}} = game;
+console.log(team1, draw, team2);
