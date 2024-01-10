@@ -1,13 +1,13 @@
 'use strict';
-const weekdays = ["Monday", "tuesday", "wed", "thu", "fri", "sat", "sun"]
+const weekdays = ["Monday", "tuesday", "wed", "thu", "fri", "sat", "sun"];
 const openingHours = {
   [weekdays[3]]: {
     open: 12,
     close: 22,
   },
   [weekdays[4]]:{
-    open: 11,
-    close: 23,
+    open: "11am",
+    close: "23pm",
   },
   [weekdays[2+3]]:{
     open: 0,
@@ -280,3 +280,28 @@ for (const [i, el] of menu.entries()) {
   console.log(`${i + 1}: ${el}`)
 }
 // console.log([...menu.entries()])
+
+if(restaurant.openingHours && restaurant.openingHours.Monday)
+console.log(restaurant.openingHours.Monday.open);
+
+if(restaurant.openingHours.fri)
+console.log(restaurant.openingHours.fri.open);
+
+//with optional chaining 
+console.log(restaurant.openingHours.Monday?.open)
+
+for (const item of weekdays) {
+  const open = restaurant.openingHours[item]?.open ?? "closed";
+  console.log(`On ${item} we open at ${open}`)
+}
+
+console.log(restaurant.orderPizza(2, 1) ?? "it doesn't exits");
+
+//arrys 
+const users = [
+  {
+    name: "rose",
+    email: "rosydhakal019@gmail.com"
+}
+];
+console.log(users[0].name?? "user array is empty");
