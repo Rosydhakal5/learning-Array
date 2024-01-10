@@ -161,3 +161,10 @@ add(5, 3, 7, 2, 1, 4);
 
 
 restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
+
+
+//Short-circuit evaluation 
+console.log(3 || "Rosy");
+console.log("" || "Dhakal");
+console.log(undefined || null);
+console.log(undefined || 0 || "Hello" || 23 ||null);
