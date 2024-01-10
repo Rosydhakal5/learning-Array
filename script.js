@@ -242,3 +242,8 @@ const game = {
 const [players1, players2] = game.players;
 console.log(players1, players2);
 
+//Assiging the first player as goal keeper and keeping others as fieldplayer
+const [gk, ...fieldPlayers] = players1;
+console.log(gk, fieldPlayers);
+
+
