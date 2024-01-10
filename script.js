@@ -30,29 +30,38 @@ const restaurant = {
   }
 }
 
-let [main, secondary] = restaurant.categories;
-[main, secondary] = [secondary, main]
-console.log(main, secondary);
+// let [main, secondary] = restaurant.categories;
+// [main, secondary] = [secondary, main]
+// console.log(main, secondary);
 
-//nested destructing 
-const nested = [2, 4, [5,6]];
-const [i, ,j] = nested;
-console.log(i, j);
-const [a, , [o, k]] = nested;
-console.log(a, o, k);
+// //nested destructing 
+// const nested = [2, 4, [5,6]];
+// const [i, ,j] = nested;
+// console.log(i, j);
+// const [a, , [o, k]] = nested;
+// console.log(a, o, k);
 
 
-//default values
-const [p =1, q=1, r=1] = [8, 9];
-console.log(p, q, r);
+// //default values
+// const [p =1, q=1, r=1] = [8, 9];
+// console.log(p, q, r);
 
-//destructuring objects
+// //destructuring objects
 
-const {name, openingHour, categories} = restaurant;
-console.log(name, openingHour, categories);
+// const {name, openingHour, categories} = restaurant;
+// console.log(name, openingHour, categories);
 
-const {name: restaurantName, openingHour: hours, categories: tags} = restaurant;
-console.log(restaurantName, hours, tags );
+// const {name: restaurantName, openingHour: hours, categories: tags} = restaurant;
+// console.log(restaurantName, hours, tags );
 
-const {menu = [], starterMenu: starters = []} = restaurant;
-console.log(menu, starters);
+// const {menu = [], starterMenu: starters = []} = restaurant;
+// console.log(menu, starters);
+
+//Mutating Variable 
+let a = 111;
+let b = 999;
+
+const obj = {a: 23, b:7, c:14};
+
+({a, b} = obj);
+console.log(a, b);
